@@ -8,16 +8,21 @@
     <div class="row center">
         <div class="col"></div>
         <div class="col">
-            <h4>LOGIN</h4>
-            <form action="/home" method="GET">
-                <label for="correo">Correo</label><br>
-                <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com"><br>
-                <label for="contrasena">Contraseña</label><br>
-                <input type="password" id="contrasena" name="contrasena" placeholder="************"><br><br>
+            <!--div class="d-flex justify-content-center"-->
+                <h4>LOGIN</h4>
+                <form action="/home" method="GET">
+                    <label for="correo">Correo</label><br>
+                    <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com"><br>
+                    <label for="contrasena">Contraseña</label><br>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="************"><br><br>
+                    <br>
+                    <input type="submit" name="loggedin" id="loggedin" value="Enviar">
+                </form> 
                 <br>
-                <input type="submit" name="loggedin" id="loggedin" value="Enviar">
-            </form> 
-              
+                ¿Aún no tienes un usuario?
+                <br>
+                <button id="Registro" name="Registro" value="Registro" href="registro.html">REGISTRO</button>  
+            <!--/div-->
         </div>
         <div class="col"></div>
     </div>

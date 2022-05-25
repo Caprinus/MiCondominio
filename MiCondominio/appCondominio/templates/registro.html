@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  {% load static %}
+
+    <div class="container-fluid">
+        <div class="row center">
+            <div class="col"></div>
+            <div class="col">
+                <!--div class="d-flex justify-content-center"-->
+                    <h4>REGISTRO</h4>
+                    <form action="/home" method="GET">
+                        <label for="nombres">Nombres</label><br>
+                        <input type="text" id="nombres" name="nombres" placeholder="Nombres"><br>
+                        
+                        <label for="apellido1">Primer apellido</label><br>
+                        <input type="text" id="apellido1" name="apellido1" placeholder="Primer Apellido"><br>
+                        
+                        <label for="apellido2">Primer apellido</label><br>
+                        <input type="text" id="apellido2" name="apellido2" placeholder="Segundo Apellido"><br>
+
+                        <label for="correo">Correo</label><br>
+                        <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com"><br>
+
+                        <label for="contrasena">Contraseña</label><br>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="************"><br><br>
+                        <br>
+                        <input type="submit" name="loggedin" id="loggedin" value="Enviar">
+                    </form> 
+                    <br>
+                    ¿Aún no tienes un usuario?
+                    <br>
+                    <button id="Registro" name="Registro" value="Registro">REGISTRO</button>  
+                <!--/div-->
+            </div>
+            <div class="col"></div>
+        </div>
+        </div>
+
+
+
+{% endblock content %}  
