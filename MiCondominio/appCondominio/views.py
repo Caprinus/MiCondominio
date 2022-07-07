@@ -8,25 +8,47 @@ import requests
 def home(request):
     try:
         try:
-            if request.GET["loggedin"]:
-                loggedin = request.GET["loggedin"]
-                #peliculas = Pelicula.objects.all()
-                #generos = Genero.objects.all()
-                context= {'loggedin':loggedin}
+            
+            loggedin = request.GET["loggedin"]
+            correo = request.GET["correo"]
+            contrasena = request.GET["contrasena"]
+            
+            #seguridad = Seguridad.objects.filter(correo__icontains=correo,contrasena__icontains=contrasena)
+            usuarios = Usuario.objects.all
+
+            try:
+                #usuario = Usuario.objects.filter(correo__icontains=correo)
+                context= {'usuarios':usuarios,'loggedin':loggedin,'correo':correo}
                 return render(request, "home.html", context)
+
+            except:
+                mensaje = "Usuario no registrado o no habilitado."
+                #context = {'mensaje':mensaje}
+                #return render(request,"login.html",context)
+                return HttpResponse(mensaje)
         except:
-            return login(request)
+            mensaje = "ruta inválida"
+            #return login(request)
+            return HttpResponse(mensaje)
     except:
         mensaje = "Problemas de carga en el home."
-        return HttpResponse(mensaje)
+
+        context = {'mensaje':mensaje}
+        return render(request,"login.html",context)
+        #return HttpResponse(mensaje)
 
 def login(request):
     try:
+        try:
+            mensaje = request.GET["mensaje"]
+            context = {'mensaje':mensaje}
+            return render(request, "login.html",mensaje)
         #if request.GET["loggedin"]:
          #   loggedin = request.GET["loggedin"]
           #  return home(request)
-        #else: 
-        return render(request, "login.html")
+        #else:
+        except:
+            return render(request, "login.html")
 
     except:
         mensaje = "Problemas de carga en el login."
@@ -42,6 +64,18 @@ def index(request):
 
     except:
         mensaje = "Problemas de carga en el login."
+        return HttpResponse(mensaje)
+
+def registro(request):
+    try:
+    #if request.GET["loggedin"]:
+         #   loggedin = request.GET["loggedin"]
+          #  return home(request)
+        #else: 
+        return render(request, "registro.html")
+
+    except:
+        mensaje = "Problemas de carga en el registro."
         return HttpResponse(mensaje)
 
 

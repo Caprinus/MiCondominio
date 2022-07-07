@@ -4,6 +4,33 @@
 {% block content %}
   {% load static %}
 
-  TEST
+  <div id="contenido" class="container">
+    <br>
+
+    <div class="container">
+      <h2 id="centrado"> Usuario : {{correo}}  </h2> 
+      <br>
+      {% if usuarios %}
+      {% for objeto in usuarios %} 
+      <div class="container">
+          {% if objeto.correo == correo %}    
+          <div class="container" >
+              <h1>Nombre     : {{objeto.nombre}}  </h1>
+              <h1>Apellido1  : {{objeto.apellido1}}</h1>
+              <h1>Apellido2  : {{objeto.apellido2}}</h1>
+              <h1>Telefono   : {{objeto.telefono}}</h1>
+              <h1>Condominio : {{objeto.condominio}}</h1>
+              <h1>Casa       : {{objeto.casa}}</h1>
+              <h1>Ingreso    : {{objeto.fecha_ingreso}}</h1>
+              <br>
+          </div>
+          {% endif %}
+      </div>
+      {% endfor %}
+      {% else %}
+    <h2 id="centrado">No se encontró al usuario.</h2>
+      {% endif %}
+    </div>
+   </div>
 
 {% endblock content %}  

@@ -10,7 +10,8 @@
             <div class="col">
                 <!--div class="d-flex justify-content-center"-->
                     <h4>REGISTRO</h4>
-                    <form action="/home" method="GET">
+                    <form action="/login/" method="POST">
+                        {% csrf_token %}
                         <label for="nombres">Nombres</label><br>
                         <input type="text" id="nombres" name="nombres" placeholder="Nombres"><br>
                         
@@ -26,12 +27,10 @@
                         <label for="contrasena">Contraseña</label><br>
                         <input type="password" id="contrasena" name="contrasena" placeholder="************"><br><br>
                         <br>
-                        <input type="submit" name="loggedin" id="loggedin" value="Enviar">
+                        <input type="submit" name="mensaje" id="mensaje" value="Enviar registro">
                     </form> 
                     <br>
-                    ¿Aún no tienes un usuario?
-                    <br>
-                    <button id="Registro" name="Registro" value="Registro">REGISTRO</button>  
+
                 <!--/div-->
             </div>
             <div class="col"></div>

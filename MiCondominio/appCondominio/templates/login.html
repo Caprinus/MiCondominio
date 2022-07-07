@@ -8,9 +8,11 @@
     <div class="row center">
         <div class="col"></div>
         <div class="col">
+            <h2 id="error"> {{mensaje}}  </h2> 
             <!--div class="d-flex justify-content-center"-->
                 <h4>LOGIN</h4>
-                <form action="/home" method="GET">
+                <form action="/home/" method="POST">
+                    {% csrf_token %}
                     <label for="correo">Correo</label><br>
                     <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com"><br>
                     <label for="contrasena">Contraseña</label><br>
@@ -21,7 +23,10 @@
                 <br>
                 ¿Aún no tienes un usuario?
                 <br>
-                <button id="Registro" name="Registro" value="Registro" href="registro.html">REGISTRO</button>  
+                <form action="/registro/" method="GET">
+                    <input type="submit" name="registro" id="registro" value="Registro">
+                </form>
+                  
             <!--/div-->
         </div>
         <div class="col"></div>
